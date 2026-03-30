@@ -1,0 +1,23 @@
+{
+  "name": "gettransfer-journeys",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CLI to fetch and normalize GetTransfer carrier journey data",
+  "bin": {
+    "gettransfer-journeys": "./src/gettransfer.js"
+  },
+  "scripts": {
+    "capture:login": "node ./src/capture-login.js",
+    "dashboard": "node ./src/dashboard-server.js",
+    "otp:listen": "node ./src/otp-receiver.js",
+    "sample:pretty": "node ./src/gettransfer.js extract --input ./fixtures/sample-response.json --format pretty",
+    "sample:json": "node ./src/gettransfer.js extract --input ./fixtures/sample-response.json --format json"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@simplewebauthn/server": "^13.3.0",
+    "playwright-core": "^1.58.2"
+  }
+}

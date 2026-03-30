@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TaskerData sr="" dvi="1" tv="6.6.20">
+  <Task sr="task" ve="2">
+    <cdate>1774857803000</cdate>
+    <edate>1774857803000</edate>
+    <id>1</id>
+    <nme>GetTransfer OTP Webhook</nme>
+    <pri>100</pri>
+    <Action sr="act" ve="7">
+      <code>339</code>
+      <label>POST OTP notification</label>
+      <Bundle sr="arg">
+        <Vals sr="val">
+          <net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_cookies
+Cookies
+The cookies the server sent in the response in the Cookie:COOKIE_VALUE format. You can use this directly in the 'Headers' field of the HTTP Request action&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%http_data
+Data
+Data that the server responded from the HTTP request.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%http_file_output
+File Output
+Will always contain the file's full path even if you specified a directory as the File to save.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%http_response_code
+Response Code
+The HTTP Code the server responded&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%http_headers()
+Response Headers
+The HTTP Headers the server sent in the response. Each header is in the 'key:value' format&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%http_response_length
+Response Length
+The size of the response in bytes&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+          <net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+        </Vals>
+      </Bundle>
+      <Int sr="arg" val="1"/>
+      <Str sr="arg" ve="3">http://100.104.170.88:8765/otp</Str>
+      <Str sr="arg" ve="3">Content-Type: text/plain</Str>
+      <Str sr="arg" ve="3"/>
+      <Str sr="arg" ve="3">%antextbig
+%antext
+%antitle</Str>
+      <Str sr="arg" ve="3"/>
+      <Str sr="arg" ve="3"/>
+      <Int sr="arg" val="30"/>
+      <Int sr="arg" val="1"/>
+      <Int sr="arg" val="1"/>
+      <Int sr="arg" val="0"/>
+      <Int sr="arg" val="1"/>
+    </Action>
+  </Task>
+</TaskerData>

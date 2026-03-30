@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Audit Trail - GetTransfer Dashboard</title>
+    <link rel="stylesheet" href="/dashboard.css" />
+  </head>
+  <body>
+    <section id="auditAuthShell" class="auth-shell hidden">
+      <div class="auth-card">
+        <p class="eyebrow">Secure Access</p>
+        <h1>Audit Trail</h1>
+        <p class="lede">
+          Log into the dashboard first to review refresh decisions, auth outcomes, and failures.
+        </p>
+        <div class="auth-actions">
+          <a href="/" class="btn btn-primary">Back To Login</a>
+        </div>
+        <p id="auditAuthStatus" class="auth-status"></p>
+      </div>
+    </section>
+
+    <div id="auditAppShell" class="shell hidden">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">GetTransfer Carrier</p>
+          <h1>Audit Trail</h1>
+          <p class="lede">
+            Human-readable history of what the automation tried, what it believed, and why it chose each path.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <a href="/" class="btn">Back To Dashboard</a>
+          <a href="/keys" class="btn">Access Keys</a>
+          <button id="auditRefreshBtn" class="btn btn-primary">Refresh Audit</button>
+          <button id="auditLogoutBtn" class="btn">Logout</button>
+          <span id="auditUserBadge" class="badge">Signed in</span>
+        </div>
+      </header>
+
+      <section class="cards" id="auditSummaryCards"></section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Operating Policy</h2>
+            <p id="auditStrategyMeta">Loading current strategy.</p>
+          </div>
+        </div>
+        <div id="auditStrategy" class="audit-strategy">
+          <div class="detail-empty">Loading strategy.</div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Recent Events</h2>
+            <p id="auditEventsMeta">Loading recent events.</p>
+          </div>
+        </div>
+        <div id="auditTimeline" class="audit-timeline">
+          <div class="detail-empty">Loading audit events.</div>
+        </div>
+      </section>
+    </div>
+
+    <script src="/audit-client.js"></script>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+{
+  "result": "success",
+  "data": {
+    "transfers": [
+      {
+        "id": 23233149,
+        "duration": null,
+        "distance": 8,
+        "time": 19,
+        "pax": 1,
+        "date_to_local": "2026-03-27T23:06:00+0000",
+        "date_end_local": null,
+        "date_return_local": null,
+        "from": {
+          "name": "Union Street, Inverness, UK",
+          "point": "(57.47865539999999,-4.2253039)",
+          "place_id": "EhtVbmlvbiBTdHJlZXQsIEludmVybmVzcywgVUsiLiosChQKEglFX9ZrUnGPSBFEjPwxoUYvrRIUChIJK-r21DcQj0gRcUvVIGWLR6U",
+          "country": "GB",
+          "types": [
+            "route"
+          ],
+          "chosen_on_map": false
+        },
+        "to": {
+          "name": "Inverness Airport (INV), Dalcross, Inverness, UK",
+          "point": "(57.54327569999999,-4.0487033)",
+          "place_id": "ChIJFYtR-fp4j0gRibJV7PG6nMw",
+          "country": "GB",
+          "types": [
+            "airport",
+            "establishment",
+            "point_of_interest"
+          ],
+          "chosen_on_map": false
+        },
+        "waiting_time_type_to": "default",
+        "waiting_time_type_return": null,
+        "transport_type_ids": [],
+        "watertaxi": false,
+        "child_seats": 0,
+        "child_seats_infant": 0,
+        "child_seats_convertible": 0,
+        "child_seats_booster": 0,
+        "name_sign_present": false,
+        "armored_option_available": false,
+        "air_conditioner_option_available": false,
+        "type": "one_way"
+      },
+      {
+        "id": 23266515,
+        "duration": null,
+        "distance": 6,
+        "time": 21,
+        "pax": 1,
+        "date_to_local": "2026-03-28T13:18:16+0000",
+        "date_end_local": null,
+        "date_return_local": null,
+        "from": {
+          "name": "Kingswells, Aberdeen AB15 8SD, UK",
+          "point": "(57.1658243,-2.221117)",
+          "place_id": "ChIJSXsHIloRhEgRMD1m8Rt-rk4",
+          "country": "GB",
+          "types": [
+            "postal_code"
+          ],
+          "chosen_on_map": false
+        },
+        "to": {
+          "name": "Saint Clair Street, Aberdeen AB24 5AL, UK",
+          "point": "(57.15329879999999,-2.095752)",
+          "place_id": "ChIJ7QVobhYOhEgRJixPILs74vc",
+          "country": "GB",
+          "types": [
+            "postal_code"
+          ],
+          "chosen_on_map": false
+        },
+        "waiting_time_type_to": "urgent",
+        "waiting_time_type_return": null,
+        "transport_type_ids": [
+          "comfort"
+        ],
+        "watertaxi": false,
+        "child_seats": 0,
+        "child_seats_infant": 0,
+        "child_seats_convertible": 0,
+        "child_seats_booster": 0,
+        "name_sign_present": false,
+        "armored_option_available": false,
+        "air_conditioner_option_available": false,
+        "type": "one_way"
+      },
+      {
+        "id": 21782900,
+        "duration": null,
+        "distance": 12,
+        "time": 42,
+        "pax": 6,
+        "date_to_local": "2026-04-17T13:00:00+0100",
+        "date_end_local": null,
+        "date_return_local": "2026-04-20T11:00:00+0100",
+        "from": {
+          "name": "Newcastle International Airport (NCS), Woolsington, Newcastle upon Tyne, Verenigd Koninkrijk",
+          "point": "(55.0393457,-1.6931282)",
+          "place_id": "ChIJtTOxCXh2fkgRRkccXYmy9Nw",
+          "country": "GB",
+          "types": [
+            "airport",
+            "establishment",
+            "point_of_interest"
+          ],
+          "chosen_on_map": false
+        },
+        "to": {
+          "name": "Maldron Hotel Newcastle, Newgate Street, Newcastle upon Tyne, Verenigd Koninkrijk",
+          "point": "(54.9717097,-1.6163145)",
+          "place_id": "ChIJU6YDj8pwfkgRe45UKOiD_is",
+          "country": "GB",
+          "types": [
+            "bar",
+            "establishment",
+            "food",
+            "lodging",
+            "point_of_interest",
+            "restaurant"
+          ],
+          "chosen_on_map": false
+        },
+        "waiting_time_type_to": "airport",
+        "waiting_time_type_return": "default",
+        "transport_type_ids": [
+          "van"
+        ],
+        "watertaxi": false,
+        "child_seats": 0,
+        "child_seats_infant": 0,
+        "child_seats_convertible": 0,
+        "child_seats_booster": 0,
+        "name_sign_present": true,
+        "armored_option_available": false,
+        "air_conditioner_option_available": false,
+        "type": "round_trip"
+      }
+    ]
+  }
+}

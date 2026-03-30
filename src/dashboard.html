@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GetTransfer Dashboard</title>
+    <link rel="stylesheet" href="/dashboard.css" />
+  </head>
+  <body>
+    <section id="authShell" class="auth-shell hidden">
+      <div class="auth-card">
+        <p class="eyebrow">Secure Access</p>
+        <h1 id="authTitle">GetTransfer Dashboard</h1>
+        <p id="authDescription" class="lede">
+          Sign in with a YubiKey, passkey, or your phone before using the dashboard.
+        </p>
+        <label id="authNameRow" class="hidden">
+          <span>Key Name</span>
+          <input id="authKeyName" type="text" maxlength="50" placeholder="YubiKey Blue, MacBook Touch ID" />
+        </label>
+        <div class="auth-actions">
+          <button id="registerBtn" class="btn btn-primary">Register Passkey</button>
+          <button id="loginBtn" class="btn">Log In</button>
+        </div>
+        <p id="authStatus" class="auth-status"></p>
+      </div>
+    </section>
+
+    <div id="appShell" class="shell hidden">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">GetTransfer Carrier</p>
+          <h1>Jobs Dashboard</h1>
+          <p class="lede">
+            Live jobs, auth status, OTP path, and scheduled pulls in one view.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <a href="/audit" class="btn">Audit Trail</a>
+          <a href="/keys" class="btn">Access Keys</a>
+          <button id="addKeyBtn" class="btn">Add Passkey</button>
+          <button id="gotifyTestBtn" class="btn">Test Gotify</button>
+          <button id="logoutBtn" class="btn">Logout</button>
+          <button id="refreshBtn" class="btn btn-primary">Refresh Data</button>
+          <button id="loginRefreshBtn" class="btn">Login + Refresh</button>
+          <span id="operationBadge" class="badge">Idle</span>
+        </div>
+      </header>
+
+      <section class="cards" id="statusCards"></section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Schedule</h2>
+            <p>Configure automatic pulls and fallback re-login behavior.</p>
+          </div>
+          <button id="saveScheduleBtn" class="btn">Save Schedule</button>
+        </div>
+        <form id="scheduleForm" class="schedule-grid">
+          <label>
+            <span>Mode</span>
+            <select name="mode" id="scheduleMode">
+              <option value="disabled">Disabled</option>
+              <option value="daily">Daily</option>
+              <option value="weekly">Weekly</option>
+            </select>
+          </label>
+          <label>
+            <span>Time</span>
+            <input type="time" name="time" id="scheduleTime" />
+          </label>
+          <label class="checkbox-row">
+            <input type="checkbox" name="auto_login_on_failure" id="autoLoginOnFailure" />
+            <span>Auto login when auth fails</span>
+          </label>
+          <div class="weekday-picker" id="weekdayPicker">
+            <span>Days</span>
+            <label><input type="checkbox" value="1" />Mon</label>
+            <label><input type="checkbox" value="2" />Tue</label>
+            <label><input type="checkbox" value="3" />Wed</label>
+            <label><input type="checkbox" value="4" />Thu</label>
+            <label><input type="checkbox" value="5" />Fri</label>
+            <label><input type="checkbox" value="6" />Sat</label>
+            <label><input type="checkbox" value="0" />Sun</label>
+          </div>
+        </form>
+      </section>
+
+      <section class="layout">
+        <div class="panel">
+          <div class="panel-head">
+            <div>
+              <h2>Jobs</h2>
+              <p id="jobsMeta">No data loaded yet.</p>
+            </div>
+          </div>
+          <div class="filters">
+            <label>
+              <span>Search</span>
+              <input id="filterSearch" type="search" placeholder="Route, place, id" />
+            </label>
+            <label>
+              <span>Trip Type</span>
+              <select id="filterType">
+                <option value="">All</option>
+              </select>
+            </label>
+            <label>
+              <span>Transport</span>
+              <select id="filterTransport">
+                <option value="">All</option>
+              </select>
+            </label>
+            <label>
+              <span>Waiting</span>
+              <select id="filterWaiting">
+                <option value="">All</option>
+              </select>
+            </label>
+            <label class="checkbox-row">
+              <input id="filterNearby" type="checkbox" checked />
+              <span>Within 15 miles of EH4 4DN</span>
+            </label>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Pickup</th>
+                  <th>Type</th>
+                  <th>Pax</th>
+                  <th>Distance</th>
+                  <th>From</th>
+                  <th>To</th>
+                  <th>Transport</th>
+                </tr>
+              </thead>
+              <tbody id="jobsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <aside class="panel detail-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Job Detail</h2>
+              <p>Click a row to inspect the normalized journey fields.</p>
+            </div>
+          </div>
+          <div id="jobDetail" class="detail-empty">No job selected.</div>
+        </aside>
+      </section>
+    </div>
+
+    <script src="/dashboard-client.js"></script>
+  </body>
+</html>

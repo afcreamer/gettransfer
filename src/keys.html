@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Access Keys - GetTransfer Dashboard</title>
+    <link rel="stylesheet" href="/dashboard.css" />
+  </head>
+  <body>
+    <section id="keysAuthShell" class="auth-shell hidden">
+      <div class="auth-card">
+        <p class="eyebrow">Secure Access</p>
+        <h1>Access Keys</h1>
+        <p class="lede">
+          Log into the dashboard first to manage passkeys and hardware keys.
+        </p>
+        <div class="auth-actions">
+          <a href="/" class="btn btn-primary">Back To Login</a>
+        </div>
+        <p id="keysAuthStatus" class="auth-status"></p>
+      </div>
+    </section>
+
+    <div id="keysAppShell" class="shell hidden">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">GetTransfer Carrier</p>
+          <h1>Access Keys</h1>
+          <p class="lede">
+            Review and remove registered passkeys and hardware keys. The last key cannot be deleted.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <a href="/" class="btn">Back To Dashboard</a>
+          <a href="/audit" class="btn">Audit Trail</a>
+          <button id="keysAddBtn" class="btn">Add Passkey</button>
+          <button id="keysLogoutBtn" class="btn">Logout</button>
+          <span id="keysUserBadge" class="badge">Signed in</span>
+        </div>
+      </header>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Registered Keys</h2>
+            <p id="keysMeta">Loading registered access keys.</p>
+          </div>
+        </div>
+        <div class="filters">
+          <label>
+            <span>New Key Name</span>
+            <input id="keysKeyName" type="text" maxlength="50" placeholder="Phone passkey, Spare YubiKey" />
+          </label>
+        </div>
+        <div id="keysList" class="keys-list">
+          <div class="detail-empty">No access keys loaded yet.</div>
+        </div>
+      </section>
+    </div>
+
+    <script src="/keys-client.js"></script>
+  </body>
+</html>

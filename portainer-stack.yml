@@ -1,0 +1,40 @@
+services:
+  gettransfer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gettransfer
+    restart: unless-stopped
+    working_dir: /data
+    entrypoint:
+      - /usr/local/bin/gettransfer-entrypoint.sh
+    command:
+      - dashboard
+    environment:
+      TZ: Europe/London
+      OTP_LISTEN_HOST: 0.0.0.0
+      OTP_LISTEN_PORT: 8765
+      OTP_OUTPUT_FILE: /data/.latest-otp.json
+      GETTRANSFER_PHONE: ${GETTRANSFER_PHONE:?set-in-portainer}
+      CHROME_PATH: /usr/bin/chromium
+      WEBAUTHN_RP_NAME: GetTransfer Dashboard
+      WEBAUTHN_RP_ID: gettransfer.summerhouse.dscloud.me
+      WEBAUTHN_ORIGIN: https://gettransfer.summerhouse.dscloud.me
+    volumes:
+      - /volume2/docker/gettransfer/data:/data
+    networks:
+      - traefik
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - fetch('http://127.0.0.1:8765/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+networks:
+  traefik:
+    external: true
